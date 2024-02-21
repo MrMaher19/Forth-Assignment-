@@ -4,6 +4,7 @@ let sumOfTotalPrice = document.getElementById('sum-total');
 let ticketPrice = 0;
 let DiscountPrice = 0;
 let selectedSeatsInfo = [];
+let couponApplied = false;
 
 function scrollToTicketSection() {
     var priceSection = document.getElementById('price-section');
@@ -77,17 +78,26 @@ function updateUI() {
 }
 
 let applyCoupon = document.getElementById('apply-btn');
+applyCoupon.style.backgroundColor = 'gray'; 
 applyCoupon.addEventListener('click', function () {
-    let couponElement = document.getElementById('coupon').value;
-    let couponCode = couponElement.split(" ").join("");
+    if (couponApplied) {
+        alert("You've already applied a coupon.");
+        return;
+    }
+
+    let couponElement = document.getElementById('coupon');
+    let couponCode = couponElement.value.split(" ").join("");
 
     let grandTotalValue = 0;
+
     if (couponCode === "NEW15") {
         DiscountPrice = ticketPrice * 0.15;
         grandTotalValue = ticketPrice - DiscountPrice;
+        alert('Coupon Code Applied Successfully');
     } else if (couponCode === "Couple20") {
         DiscountPrice = ticketPrice * 0.2;
         grandTotalValue = ticketPrice - DiscountPrice;
+        alert('Coupon Code Applied Successfully');
     } else {
         alert("Your given coupon code is invalid! Please give a valid coupon code");
         return;
@@ -104,9 +114,19 @@ applyCoupon.addEventListener('click', function () {
     showDiscount.innerHTML = '';
     let discountTag = document.createElement('p');
     discountTag.innerHTML = "Discount Price" + ' ' + ":" + ' ' + "BDT" + ' ' + DiscountPrice;
-    discountTag.style.color = 'red  ';
+    discountTag.style.color = 'red';
     showDiscount.appendChild(discountTag);
     discountTag.style.marginLeft = '55px';
+
+    applyCoupon.style.backgroundColor = '#1DD100';
+    applyCoupon.disabled = true;
+
+    setTimeout(function () {
+        applyCoupon.style.backgroundColor = 'gray';
+        applyCoupon.disabled = false;
+        couponElement.value = '';
+        couponApplied = true;
+    }, 1500);
 });
 
 let nextButton = document.getElementById('next-btn');
@@ -124,5 +144,8 @@ nextButton.addEventListener('click', function () {
         allSection.classList.remove('hidden');
         successSection.classList.add('hidden');
         footerSection.classList.remove('hidden');
+        couponApplied = false;
+        applyCoupon.disabled = false;
+        applyCoupon.classList.remove('disabled-button');
     });
 });
