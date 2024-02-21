@@ -10,27 +10,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/11d904f8b8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="all-section">
-    <div class="navbar bg-base-100">
-  <div class="navbar-start">
-    <h1 class="text-4xl font-extrabold">P-Ticket</h1>
-  </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal text-lg font-medium">
-      <li><a>Home</a></li>
-      <li><a>About</a></li>
-      <li><a>Destination</a></li>
-      <li><a>Search</a></li>
-    </ul>
-  </div>
-  <div class="navbar-end">
-    <h1 class=" text-[#1DD100] text-xl font-bold">Bus</h1>
-    <img src="bus-icon.png" alt="">
-  </div>
-</div>
+<div id="all-section">
+<nav>
+    <div class="flex items-center justify-around mt-5 mb-8">
+        <h1 class="text-4xl font-extrabold">P-Ticket</h1>
+
+      <ul class="flex text-lg font-medium space-x-32">
+      <li class=" hover:text-[#1DD100]"><a href="#">Home</a></li>
+      <li class=" hover:text-[#1DD100]"><a href="#">About</a></li>
+      <li class=" hover:text-[#1DD100]"><a href="#">Destination</a></li>
+      <li class=" hover:text-[#1DD100]"><a href="#">Search</a></li>
+        </ul>
+        <div class="text-[#1DD100] text-xl font-bold flex justify-center items-center bg-[#1DD1001A] w-[130px] h-[56px] rounded-xl space-x-3">
+            <img src="bus-icon.png" alt="">
+            <p>Bus</p>
+        </div>
+    </div>
+</nav>
+
+
 <div class="rounded-3xl flex flex-col justify-center items-center w-[1171px] h-[500px] m-auto" style="background-image: url(banner.png);">
   <div class="text-center text-neutral-content">
     <div>
@@ -39,7 +40,7 @@
          <h1 class="text-5xl font-bold text-[#1DD100]">P Paribahan</h1>
      </div>
       <p class="pt-5 pb-8 text-lg font-normal text-[#FFFFFF]">Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
-      <button onclick="scrollToTicketSection()" class="w-[170px] h-[65px] bg-[#1DD100] text-black text-xl font-bold rounded-xl" >Buy Ticket</button>
+      <button onclick="scrollToTicketSection()" class="w-[170px] h-[65px] bg-[#1DD100] text-black text-xl font-bold rounded-xl hover:text-white  hover:bg-transparent hover:border-[3px] hover:border-[#1DD100]" >Buy Ticket</button>
     </div>
   </div>
 </div>
@@ -133,7 +134,6 @@
              <div><h1 class="text-2xl font-semibold pl-8 pt-8">Select Your Seat</h1></div>
              <div><h1 class="text-2xl font-semibold pr-[115px] pt-8">Apply Your Coupon & Sign Up</h1>
             </div>
-
         </div>
         <div class="flex">
             <div class="pt-6 pb-10">
@@ -147,14 +147,13 @@
             <div class="pt-6 pb-10 pl-10">
                 <hr class="w-[420px] ml-8">
                 <div class="flex pl-8 py-5">
-                <div class="flex"><img src="seat-gray.png" alt=""><p class="text-[18px] font-medium text-[#03071280] pl-2">Available</p></div>
-                <div class="flex pl-48"><img src="seat-green-filled.png" alt=""><p class="text-[18px] font-medium text-[#1DD100] pl-2">Selected</p></div>
+                <div class="flex space-x-2"><div><i class="fa-solid fa-ticket fa-shake fa-xl" style="color: #41d243;"></i></div><p>Coupon</p></div>
+                <div class="flex pl-48"><div><i class="fa-solid fa-user-plus fa-xl" style="color:#41d243;"></i></div><p class="text-[18px] font-medium text-[#1DD100] pl-2">Sign Up</p></div>
                 </div>
                 <hr class="w-[420px] ml-8"> 
             </div>
         </div>
             <div class="w-[100px] h-[50px] bg-[#0307121A] rounded-xl flex justify-center items-center ml-[540px] mt-6"><img src="tabler-icon-steering-wheel.jpg" alt=""></div>
-
 <div class="flex justify-between">
             <div class="mt-6 flex justify-between w-[650px] rounded-xl">
                 <div class="grid grid-cols-2 ml-6 gap-y-6 gap-x-8 text-[#03071280] text-[18px] font-medium">
@@ -239,16 +238,45 @@
                         <button id="next-btn" class="w-[433px] h-[60px] bg-[#1DD100] text-white text-xl font-extrabold rounded-2xl">Next</button>
                     </div>
                 </div>
-
-</div>
-
-
+        </div>
 </div>                
     </div>
     </div>
 </div>
 </div>
-
+<footer id="footer-section" class="w-full h-[450px] bg-black flex justify-center flex-col">
+    <div>
+        <div class="flex items-center justify-center space-x-96">
+            <div class="flex flex-col space-y-8">
+                <h1 class="text-4xl font-extrabold text-[#27AE60]">P-Ticket</h1>
+                <p class="text-[#FFFFFFCC] text-[18px] font-normal">P-Ticket is a digital platform to make your <br> daily commuting better.</p>
+            </div>
+            <div class="flex flex-col space-y-8">
+                <h1 class="text-white text-xl font-semibold">Download our app</h1>
+                <div class="text-white flex items-center space-x-3 border border-white rounded-xl">
+                    <img src="playstore.png" alt="" class="h-[35px]">
+                    <div>
+                    <p>Get It On</p>
+                    <p class="text-2xl">Google Play</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <hr class="w-[910px] mt-10 ml-44 border border-white">
+        <div class="flex justify-center space-x-16 mt-8">
+            <div>
+                <p class="text-[#FFFFFFB2] text-base">@all rights reserved, P-Ticket services limited.2024</p>
+            </div>
+            <div>
+                <ul class="text-white text-base font-medium flex space-x-10">
+                    <li>Terms & condition</li>
+                    <li>Terms & condition</li>
+                    <li>Privacy policy</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 <div id="success-section" class="hidden">
 <div class="w-[650px] h-[450px] m-auto bg-[#F2F1F1] rounded-2xl flex flex-col justify-center items-center text-center">
     <div>
@@ -262,9 +290,7 @@
     </div>
 </div>
 </div>
-
-
-
+</div>
 <script src="script.js"></script>
 </body>
 </html>
